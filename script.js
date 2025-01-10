@@ -50,7 +50,7 @@ function createCardsThenAppend(apiDataStore, index) {
                                 <h1 class="country_card_data_row-1">${apiDataStore[index].name.common}</h1>
                                 <p class="country_card_data_row-2">
                                     <strong class="Population">Population:</strong>
-                                    <span class="Population-data">${apiDataStore[index].population}</span>
+                                    <span class="Population-data">${new Intl.NumberFormat('en-IN').format(apiDataStore[index].population)}</span>
                                 </p>
                                 <p class="country_card_data_row-2">
                                     <strong class="Region">Region:</strong>
