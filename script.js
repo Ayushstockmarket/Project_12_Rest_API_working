@@ -4,6 +4,7 @@ const body = document.querySelector("body");
 const apiCountry = "https://restcountries.com/v3.1/all";
 const cards_folder = document.querySelector(".cards_folder");
 const inputDatafetchSearch = document.querySelector(".inputDatafetchSearch");
+const borderCountry=document.querySelector('.border-javaScript-country');
 let apiDataStore = [];
 let inputSearchValue;
 function modes() {
@@ -40,25 +41,39 @@ function clearPreviousOutput() {
 function createCardsThenAppend(apiDataStore, index) {
   const createAnchorThenAppend = document.createElement("a");
   createAnchorThenAppend.classList.add("anchor_cards");
-  createAnchorThenAppend.setAttribute("href", "https://example.com");
-  createAnchorThenAppend.setAttribute("target", "_blank");
+  createAnchorThenAppend.setAttribute(
+    "href",
+    `./fullPage.html?name=${apiDataStore[index].name.common}`
+  );
   createAnchorThenAppend.innerHTML = `
                             <div class="country-image">
-                                <img class="country-images-png" src="${apiDataStore[index].flags.png}"alt="">
-                            </div>
+                                <img class="country-images-png" src="${
+                                  apiDataStore[index].flags.png
+                                }"alt="">
+                              </div>
                             <div class="country-data">
-                                <h1 class="country_card_data_row-1">${apiDataStore[index].name.common}</h1>
+                                <h1 class="country_card_data_row-1">${
+                                  apiDataStore[index].name.common
+                                }</h1>
                                 <p class="country_card_data_row-2">
                                     <strong class="Population">Population:</strong>
-                                    <span class="Population-data">${new Intl.NumberFormat('en-IN').format(apiDataStore[index].population)}</span>
+                                    <span class="Population-data">${new Intl.NumberFormat(
+                                      "en-IN"
+                                    ).format(
+                                      apiDataStore[index].population
+                                    )}</span>
                                 </p>
                                 <p class="country_card_data_row-2">
                                     <strong class="Region">Region:</strong>
-                                    <span class="Region-data">${apiDataStore[index].region}</span>
+                                    <span class="Region-data">${
+                                      apiDataStore[index].region
+                                    }</span>
                                 </p>
                                 <p class="country_card_data_row-3">
                                     <strong class="Capital">Capital:</strong>
-                                    <span class="Capital-data">${apiDataStore[index].capital}</span>
+                                    <span class="Capital-data">${
+                                      apiDataStore[index].capital
+                                    }</span>
                                 </p>
                             </div>`;
   cards_folder.appendChild(createAnchorThenAppend);
