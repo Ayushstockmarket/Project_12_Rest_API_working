@@ -10,7 +10,7 @@ a{
     list-style: none;
     text-decoration: none;
     color: inherit;
-    overflow: scroll;
+    overflow: hidden;
 }
 main {
   display: flex;
