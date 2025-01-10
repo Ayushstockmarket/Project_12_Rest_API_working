@@ -1,4 +1,4 @@
-/* Common Code Use Every Website  */
+/* General Styles */
 body {
   margin: 0;
   padding: 0;
@@ -6,11 +6,20 @@ body {
 * {
   box-sizing: border-box;
 }
-a{
-    list-style: none;
-    text-decoration: none;
-    color: inherit;
-    overflow: hidden;
+a {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+/* Root and Main Container */
+.root {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 main {
   display: flex;
@@ -19,14 +28,7 @@ main {
   margin: 0 auto;
 }
 
-/* Common Code Use Every Website  */
-.root {
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
+/* Header */
 .rt-header {
   position: sticky;
   top: 0;
@@ -39,10 +41,24 @@ main {
   box-shadow: 10px 10px 8px #888888;
   background-color: whitesmoke;
   color: black;
-} 
-select{
-  outline: none;
 }
+
+/* Light and Dark Modes */
+.modes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.none {
+  display: none;
+}
+.svg-modes > svg {
+  width: 25px;
+  height: 25px;
+}
+
+/* Filter and Search Section */
 .filter_and_search {
   display: flex;
   align-items: center;
@@ -53,16 +69,13 @@ select{
   width: 95%;
   background-color: white;
   left: 2.5%;
+  z-index: 2000;
 }
-.anchor_cards{
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 10px;
+select {
+  outline: none;
 }
-.country-data{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
+/* Cards Section */
 .cards_folder {
   margin-top: 100px;
   display: flex;
@@ -70,15 +83,16 @@ select{
   padding-left: 40px;
   gap: 10px;
 }
-/* Country Card Same Styling Apply */
 .anchor_cards {
   display: flex;
   flex-direction: column;
   width: 300px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.anchor_cards:hover{
+.anchor_cards:hover {
   transform: scale(1.1); /* Slightly enlarge */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
 }
@@ -93,13 +107,14 @@ select{
   height: 100%;
 }
 .country-data {
-  width: 100%;
-  height: 50%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 50%;
 }
-/* footer styling code here  */
-/* Footer Styles */
+
+/* Footer */
 .footer {
   background-color: #1e1e1e;
   color: #f5f5f5;
@@ -107,7 +122,6 @@ select{
   font-family: Arial, sans-serif;
   margin-top: 10px;
 }
-
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -117,13 +131,11 @@ select{
   margin: 0 auto;
   padding: 10px;
 }
-
 .footer-container > div {
   flex: 1;
   margin: 10px;
   min-width: 250px;
 }
-
 .footer h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
@@ -131,32 +143,26 @@ select{
   display: inline-block;
   padding-bottom: 5px;
 }
-
 .footer p,
 .footer ul {
   font-size: 0.9rem;
   line-height: 1.6;
 }
-
 .footer ul {
   list-style: none;
   padding: 0;
 }
-
 .footer ul li {
   margin-bottom: 5px;
 }
-
 .footer ul li a {
   color: #f5f5f5;
   text-decoration: none;
   transition: color 0.3s;
 }
-
 .footer ul li a:hover {
   color: #ff9800;
 }
-
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
@@ -164,27 +170,7 @@ select{
   color: #aaa;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .footer-container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .footer-container > div {
-      margin: 10px 0;
-      text-align: center;
-  }
-
-  .footer ul li {
-      display: inline;
-      margin: 0 10px;
-  }
-}
-
-/* footer styling code here */
-/* Here the code of the scrolling of the upper and the bottom of the code  */
-/* Scroll Buttons Styles */
+/* Scroll Buttons */
 .scroll-buttons {
   position: fixed;
   bottom: 20px;
@@ -193,7 +179,6 @@ select{
   flex-direction: column;
   gap: 10px;
 }
-
 .scroll-btn {
   background-color: #ff9800;
   color: white;
@@ -205,43 +190,33 @@ select{
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
 }
-
 .scroll-btn:hover {
   background-color: #e67e22;
   transform: scale(1.1);
 }
-
 .scroll-btn:active {
   transform: scale(1);
 }
-
-/* Responsive Design for Buttons */
+/* Responsive Design */
 @media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-container > div {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .footer ul li {
+    display: inline;
+    margin: 0 10px;
+  }
   .scroll-buttons {
-      right: 10px;
-      bottom: 10px;
+    right: 10px;
+    bottom: 10px;
   }
-
   .scroll-btn {
-      padding: 8px 12px;
-      font-size: 0.9rem;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 }
-/* Here the code of the scrolling of the upper and the bottom of the code  */
-
-/* Country Card Same Styling Apply */
-/* Dark Mode and Light Mode Css Here  */
-.modes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.none {
-  display: none;
-}
-.svg-modes > svg {
-  width: 25px;
-  height: 25px;
-}
-/* Dark Mode and Light Mode Css Here Above in between */
