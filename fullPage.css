@@ -289,6 +289,7 @@ main {
     justify-content: center;
     gap: 10px;
     overflow: scroll;
+  scrollbar-width: none;
 }
 .country_name{
     font-size: 2rem;
@@ -306,6 +307,7 @@ main {
     flex-direction: column;
     gap: 20px;
     overflow: scroll;
+    scrollbar-width: none;
 }
 .country_data_row1,.country_data_row2{
     display: flex;
