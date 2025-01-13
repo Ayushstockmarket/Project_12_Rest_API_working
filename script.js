@@ -47,7 +47,7 @@ function createCardsThenAppend(apiDataStore, index) {
   );
   createAnchorThenAppend.innerHTML = `
                             <div class="country-image">
-                                <img class="country-images-png" src="${
+                                <img class="country-images-png" loading="lazy" src="${
                                   apiDataStore[index].flags.png
                                 }"alt="">
                               </div>
